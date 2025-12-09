@@ -7,8 +7,9 @@ RUN echo "kasm-user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # Replace Kasm repo with full Kali repo
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware" \
     > /etc/apt/sources.list \
-    && apt update \
-    && apt install -y kali-linux-large iputils-ping
+    && apt update && apt upgrade -y \
+    && apt install -y kali-linux-large iputils-ping \
+    && apt install nuclei
 
 USER kasm-user
 

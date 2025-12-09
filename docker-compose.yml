@@ -3,14 +3,15 @@ services:
     image: rootandbeer/kali-web:latest
     container_name: kali
     shm_size: "512m"
-    ports:
-      - "6901:6901"
+#    ports:
+#      - "6901:6901"
     environment:
       VNC_PW: "password"
       PASSWORD: "password"
     volumes:
       - kali_home:/home/kasm-user
       - kali_opt:/opt   # optional persistent tool storage
+      - /mnt/kali:/home/kasm_user/shared # optional bind mount for file sharing w/ host 
     restart: unless-stopped
     privileged: true    # required for nmap, wireshark, kismet, ping, etc
     networks:
