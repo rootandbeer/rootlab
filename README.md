@@ -11,7 +11,7 @@ Option 1: **Run all containers including kali (for those who do not currently ha
 docker compose up -d
 ```
 
-- Kali Linux Web UI: https://localhost:6901
+- Kali Linux Web UI: https://172.18.1.10:6901
 - Username: *kasm_user*
 - Password: *password*
 
